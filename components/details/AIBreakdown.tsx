@@ -9,7 +9,7 @@ export function AIBreakdown({ incident }: { incident: Incident }) {
   const isInvestigating = incident.id === "trustedvolumes-resolver-exploit";
 
   return (
-    <GlassCard className="p-6">
+    <GlassCard id="ai-breakdown" className="p-6 scroll-mt-24">
       <div className="flex items-center gap-3">
         <div className="grid h-10 w-10 place-items-center rounded-md border border-cyan-300/25 bg-cyan-300/10 text-cyan-200">
           <BrainCircuit className="h-5 w-5" />

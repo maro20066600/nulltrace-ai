@@ -32,7 +32,7 @@ export function TechnicalBreakdown({ incident }: { incident: Incident }) {
               <AlertTriangle className="h-4 w-4" />
               ongoing exploit technical readout
             </div>
-            <p className="mt-3 text-sm leading-6 text-slate-300">
+            <p className="mt-3 text-base leading-relaxed text-slate-300">
               The alert indicates an active exploit against a TrustedVolumes resolver used in the 1inch market
               maker/resolver flow. Current evidence points to a TrustedVolumes-controlled custom RFQ swap proxy as the
               likely vulnerable execution surface. This is tracked as a different vulnerability from the March 2025
@@ -46,7 +46,7 @@ export function TechnicalBreakdown({ incident }: { incident: Incident }) {
               <h3 className="mt-3 font-mono text-xs font-bold uppercase tracking-[0.18em] text-cyan-100">
                 Attack path hypothesis
               </h3>
-              <p className="mt-2 text-sm leading-6 text-slate-300">
+              <p className="mt-2 text-base leading-relaxed text-slate-300">
                 Exploiter interacts with the resolver/proxy path, abuses swap execution assumptions, then extracts
                 liquid assets from the resolver-controlled flow.
               </p>
@@ -56,7 +56,7 @@ export function TechnicalBreakdown({ incident }: { incident: Incident }) {
               <h3 className="mt-3 font-mono text-xs font-bold uppercase tracking-[0.18em] text-cyan-100">
                 Extracted assets
               </h3>
-              <div className="mt-2 space-y-1 text-sm text-slate-300">
+              <div className="mt-2 space-y-1.5 text-base text-slate-300">
                 {trustedVolumesExtractedAssets.map((asset) => (
                   <p key={asset}>{asset}</p>
                 ))}
@@ -67,7 +67,7 @@ export function TechnicalBreakdown({ incident }: { incident: Incident }) {
               <h3 className="mt-3 font-mono text-xs font-bold uppercase tracking-[0.18em] text-cyan-100">
                 Immediate action
               </h3>
-              <p className="mt-2 text-sm leading-6 text-slate-300">
+              <p className="mt-2 text-base leading-relaxed text-slate-300">
                 Isolate resolver permissions, revoke unsafe proxy routes, monitor exploiter outflows, and notify
                 liquidity partners before broader routing resumes.
               </p>
@@ -92,11 +92,11 @@ export function TechnicalBreakdown({ incident }: { incident: Incident }) {
       <div className="mt-6 grid gap-5 md:grid-cols-2">
         <section className="rounded-md border border-white/10 bg-black/25 p-4">
           <h3 className="font-mono text-xs font-bold uppercase tracking-[0.18em] text-cyan-100">Attack vector</h3>
-          <p className="mt-2 text-sm leading-6 text-slate-300">{incident.attackVector}</p>
+          <p className="mt-2 text-base leading-relaxed text-slate-300">{incident.attackVector}</p>
         </section>
         <section className="rounded-md border border-white/10 bg-black/25 p-4">
           <h3 className="font-mono text-xs font-bold uppercase tracking-[0.18em] text-cyan-100">Vulnerability</h3>
-          <p className="mt-2 text-sm leading-6 text-slate-300">{incident.vulnerability}</p>
+          <p className="mt-2 text-base leading-relaxed text-slate-300">{incident.vulnerability}</p>
         </section>
       </div>
       <div className="mt-5 grid gap-5 md:grid-cols-2">
@@ -106,7 +106,7 @@ export function TechnicalBreakdown({ incident }: { incident: Incident }) {
           </h3>
           <div className="mt-3 space-y-2">
             {incident.affectedContracts.map((contract) => (
-              <code key={contract} className="block rounded-md border border-white/10 bg-black/35 px-3 py-2 text-sm text-slate-300">
+              <code key={contract} className="block rounded-md border border-white/10 bg-black/35 px-3 py-2.5 text-sm font-bold text-slate-300">
                 {contract}
               </code>
             ))}
@@ -118,8 +118,8 @@ export function TechnicalBreakdown({ incident }: { incident: Incident }) {
           </h3>
           <div className="mt-3 space-y-2">
             {incident.mitigations.map((mitigation) => (
-              <div key={mitigation} className="flex gap-2 rounded-md border border-white/10 bg-black/25 p-3 text-sm text-slate-300">
-                <Wrench className="mt-0.5 h-4 w-4 shrink-0 text-cyan-200" />
+              <div key={mitigation} className="flex gap-2.5 rounded-md border border-white/10 bg-black/25 p-3.5 text-base leading-relaxed text-slate-300">
+                <Wrench className="mt-0.5 h-5 w-5 shrink-0 text-cyan-200" />
                 {mitigation}
               </div>
             ))}
