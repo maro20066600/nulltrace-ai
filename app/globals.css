@@ -1,26 +1,114 @@
+@import "@xyflow/react/dist/style.css";
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #05060a;
+  --foreground: #f8fafc;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: #05060a;
 }
 
 body {
-  background: var(--background);
+  min-height: 100vh;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(0, 255, 209, 0.12), transparent 30%),
+    radial-gradient(circle at 80% 0%, rgba(255, 45, 85, 0.11), transparent 28%),
+    linear-gradient(180deg, #05060a 0%, #090b12 48%, #05060a 100%);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+::selection {
+  background: rgba(0, 255, 209, 0.28);
+  color: white;
+}
+
+.scanline {
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(0, 255, 209, 0.08) 48%,
+    rgba(0, 255, 209, 0.18) 50%,
+    rgba(0, 255, 209, 0.08) 52%,
+    transparent 100%
+  );
+  background-size: 100% 9px;
+  animation: scan 5s linear infinite;
+}
+
+.ticker {
+  animation: ticker 32s linear infinite;
+}
+
+.globe-ring {
+  animation: globe-spin 13s linear infinite;
+  transform: rotateX(68deg) rotateZ(0deg);
+}
+
+.globe-ring-slow {
+  animation: globe-spin 21s linear infinite reverse;
+  transform: rotateX(68deg) rotateZ(0deg);
+}
+
+.wavebar {
+  animation: wave 1.2s ease-in-out infinite alternate;
+  min-height: 8px;
+}
+
+.react-flow {
+  --xy-node-background-color-default: rgba(3, 7, 18, 0.82);
+  --xy-node-border-default: 1px solid rgba(0, 255, 209, 0.35);
+  --xy-node-color-default: #e0fdfa;
+  --xy-controls-button-background-color-default: rgba(3, 7, 18, 0.9);
+  --xy-controls-button-color-default: #67e8f9;
+}
+
+@keyframes scan {
+  from {
+    transform: translateY(-20%);
+  }
+  to {
+    transform: translateY(20%);
+  }
+}
+
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes globe-spin {
+  to {
+    transform: rotateX(68deg) rotateZ(360deg);
+  }
+}
+
+@keyframes wave {
+  from {
+    transform: scaleY(0.55);
+    opacity: 0.55;
+  }
+  to {
+    transform: scaleY(1);
+    opacity: 1;
+  }
 }

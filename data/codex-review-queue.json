@@ -1,0 +1,29 @@
+[
+  {
+    "id": "codex-moylqi0j-amamwl",
+    "target": "0x00b949bc3ed3edb58b04faedfbd8eb1db2edceae761382e80fe012919f8d3732",
+    "normalizedTarget": "0x00b949bc3ed3edb58b04faedfbd8eb1db2edceae761382e80fe012919f8d3732",
+    "source": "contract-lookup",
+    "status": "PENDING_CODEX_REVIEW",
+    "createdAt": "2026-05-09T17:12:24.499Z",
+    "note": "User submitted an unknown contract from the landing-page lookup. Codex should review and prepare a technical breakdown if evidence is available."
+  },
+  {
+    "id": "codex-moyl6kdn-6c45fh",
+    "target": "0x00b949bc3ed3edb58b04faedfbd8eb1db2edceae761382e80fe012919f8d3732",
+    "normalizedTarget": "0x00b949bc3ed3edb58b04faedfbd8eb1db2edceae761382e80fe012919f8d3732",
+    "source": "contract-lookup",
+    "status": "IN_REVIEW",
+    "createdAt": "2026-05-09T16:56:54.443Z",
+    "note": "Codex review started. Public search links this tx to a reported Singularity_Fi exploit with approximately $413K loss, exploiters 0x25C08505b6c5Eba2D6C5d97c9E9a7F5f58d9A079 and 0x7CfE3EFF78b52D5A0350A033781Afc8706030b32, with most funds reportedly deposited to Tornado Cash. A separate indexed writeup references this same tx in a DynaVault share-inflation/oracle-manipulation timeline, so attribution needs confirmation before publishing a final dossier."
+  },
+  {
+    "id": "codex-moyl4yob-lyi6o9",
+    "target": "0x1111111111111111111111111111111111111111",
+    "normalizedTarget": "0x1111111111111111111111111111111111111111",
+    "source": "contract-lookup",
+    "status": "PENDING_CODEX_REVIEW",
+    "createdAt": "2026-05-09T16:55:39.659Z",
+    "note": "Verification request for Codex review queue."
+  }
+]
